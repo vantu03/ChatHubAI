@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <title>{% block title %}ChatHub AI | Your Smart Assistant{% endblock %}</title>
+    <meta name="description" content="{% block description %}ChatHub AI is an intelligent chatbot powered by OpenAI API. Ask anything, get instant help.{% endblock %}" />
+    <meta name="keywords" content="{% block keywords %}chatbot, AI assistant, OpenAI, ChatHub, smart bot{% endblock %}" />
+    <meta name="author" content="ChatHub Team" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{% block og_title %}ChatHub AI - Smart Assistant{% endblock %}" />
+    <meta property="og:description" content="{% block og_description %}An AI assistant powered by OpenAI. Get quick answers to your questions.{% endblock %}" />
+    <meta property="og:image" content="{% block og_image %}{% static 'images/og-image.png' %}{% endblock %}" />
+    <meta property="og:url" content="{% block og_url %}https://chathubai.local{% endblock %}" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{% block twitter_title %}ChatHub AI{% endblock %}" />
+    <meta name="twitter:description" content="{% block twitter_description %}Ask anything. Chat instantly with AI.{% endblock %}" />
+    <meta name="twitter:image" content="{% block twitter_image %}{% static 'images/twitter-card.png' %}{% endblock %}" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{% static 'images/favicon-32x32.png' %}">
+
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="bg-primary text-white p-3 mb-4 shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="h4 m-0"><i class="bi bi-chat-dots-fill me-2"></i>ChatHub AI</h1>
+            <nav>
+                <a href="{% url 'home' %}" class="text-white text-decoration-none me-3">Home</a>
+                <a href="{% url 'chat' %}" class="text-white text-decoration-none">Chat</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center text-muted py-4 mt-5">
+        <div class="container">
+            <p class="mb-1">&copy; {% now "Y" %} ChatHub AI.</p>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

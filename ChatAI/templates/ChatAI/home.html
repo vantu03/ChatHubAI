@@ -1,0 +1,35 @@
+{% extends 'ChatAI/base.html' %}
+
+{% block title %}Trang Chủ | ChatHub AI{% endblock %}
+
+{% block content %}
+<div class="text-center py-5">
+    <h1 class="display-5 fw-bold">Chào mừng đến với ChatHub AI</h1>
+    <p class="lead mt-3 mb-4">
+        ChatHub AI là trợ lý thông minh giúp bạn tìm kiếm thông tin, giải đáp thắc mắc và hỗ trợ lập trình chỉ trong vài giây.
+    </p>
+    <a href="{% url 'chat' %}" class="btn btn-primary btn-lg">
+        Bắt đầu trò chuyện <i class="bi bi-arrow-right-circle ms-2"></i>
+    </a>
+</div>
+
+<hr class="my-5" />
+
+<div class="row text-center">
+    <div class="col-md-4 mb-4">
+        <i class="bi bi-lightbulb display-4 text-warning mb-3"></i>
+        <h5>Trí tuệ nhân tạo</h5>
+        <p>Được xây dựng trên nền tảng OpenAI, giúp bạn giao tiếp tự nhiên và hiệu quả.</p>
+    </div>
+    <div class="col-md-4 mb-4">
+        <i class="bi bi-code-slash display-4 text-success mb-3"></i>
+        <h5>Hỗ trợ lập trình</h5>
+        <p>Giải bài toán, phân tích code, gợi ý thuật toán – tất cả trong một cú click.</p>
+    </div>
+    <div class="col-md-4 mb-4">
+        <i class="bi bi-chat-dots display-4 text-primary mb-3"></i>
+        <h5>Giao diện thân thiện</h5>
+        <p>Dễ sử dụng, đơn giản, nhưng đầy mạnh mẽ cho cả người dùng mới và dân kỹ thuật.</p>
+    </div>
+</div>
+{% endblock %}
